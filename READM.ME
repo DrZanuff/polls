@@ -1,0 +1,22 @@
+How to run the project
+
+Create Docker (Postgress and Radis)
+`docker compose up`
+
+To check if Postgress port 5432 it is being used
+`sudo ss -lptn 'sport = :5432'`
+
+Then if there is a process running, kill it with
+`sudo kill PID_NUMBER`
+
+To check if Docker images are running (Or open Docker Desktop)
+`docker ps`
+
+Run the project
+`npm run dev`
+
+To update prisma db tables run
+`npx prisma migrate dev`
+
+To inspect the Postgress database
+`npx prisma studio`
