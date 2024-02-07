@@ -22,6 +22,12 @@ export async function getPoll(app: FastifyInstance) {
       },
     })
 
-    return reply.status(200).send({ poll })
+    const totalVotes = await prisma.vote.count({
+      where: {
+        pollId: pollId,
+      },
+    })
+
+    return reply.status(200).send({ poll, totalVotes })
   })
 }
